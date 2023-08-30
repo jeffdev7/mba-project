@@ -4,8 +4,7 @@
     {
         public virtual LiquorStore LiquorStore { get; set; }
         public Guid LiquorStoreId { get; set; }
-        public virtual Beverage Beverage { get; set; }
-        public Guid BeverageId { get; set; }
+        public List<Beverage> Beverages { get; set; }
         public int QuantityInStock { get; set; }
         public decimal AveragePrice { get; set; }
         public bool hasDiscount { get; set; }
@@ -16,13 +15,12 @@
             
         }
 
-        public Stock(LiquorStore liquorStore, Guid liquorStoreId, Beverage beverage, 
-            Guid beverageId, int quantityInStock, decimal averagePrice, bool hasDiscount, decimal discount)
+        public Stock(LiquorStore liquorStore, Guid liquorStoreId, List<Beverage> beverages, 
+            int quantityInStock, decimal averagePrice, bool hasDiscount, decimal discount)
         {
             LiquorStore = liquorStore;
             LiquorStoreId = liquorStoreId;
-            Beverage = beverage;
-            BeverageId = beverageId;
+            Beverages = beverages;
             QuantityInStock = quantityInStock;
             AveragePrice = averagePrice;
             this.hasDiscount = hasDiscount;

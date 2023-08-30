@@ -7,6 +7,12 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "fast-booze.domain", "fast-b
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "1-Domain", "1-Domain", "{F271D173-881C-491D-9C64-0636A1BE3FB8}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "fast-booze.data", "fast-booze.data\fast-booze.data.csproj", "{1EE29760-DEF4-4DE8-B51F-290984211FF6}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "2-Infrastructure", "2-Infrastructure", "{6D29AE59-78DC-4CBD-9D6A-FE742581EE49}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Data", "Data", "{CF7973F0-3495-42F9-BA93-9ACDB93EE7B6}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -17,12 +23,18 @@ Global
 		{6F3D7D21-CD32-4219-9814-04200B6586B4}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{6F3D7D21-CD32-4219-9814-04200B6586B4}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{6F3D7D21-CD32-4219-9814-04200B6586B4}.Release|Any CPU.Build.0 = Release|Any CPU
+		{1EE29760-DEF4-4DE8-B51F-290984211FF6}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{1EE29760-DEF4-4DE8-B51F-290984211FF6}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{1EE29760-DEF4-4DE8-B51F-290984211FF6}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{1EE29760-DEF4-4DE8-B51F-290984211FF6}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
 	EndGlobalSection
 	GlobalSection(NestedProjects) = preSolution
 		{6F3D7D21-CD32-4219-9814-04200B6586B4} = {F271D173-881C-491D-9C64-0636A1BE3FB8}
+		{1EE29760-DEF4-4DE8-B51F-290984211FF6} = {CF7973F0-3495-42F9-BA93-9ACDB93EE7B6}
+		{CF7973F0-3495-42F9-BA93-9ACDB93EE7B6} = {6D29AE59-78DC-4CBD-9D6A-FE742581EE49}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {B8206500-89C3-4677-B776-8AA799695C60}

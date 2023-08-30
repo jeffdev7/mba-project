@@ -4,17 +4,17 @@
     {
        public virtual Customer Customer { get; set; }
        public  Guid CustomerId { get; set; }
-       public List<ItemOrder> Itens { get; set; }
+       public List<ItemOrder> Items { get; set; }
 
         public Order()
         {
 
         }
-        public Order(Customer customer, Guid customerId, List<ItemOrder> itens)
+        public Order(Customer customer, Guid customerId, List<ItemOrder> items)
         {
             Customer = customer;
             CustomerId = customerId;
-            Itens = itens;
+            Items = items;
         }
     }
 }
