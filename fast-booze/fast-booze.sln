@@ -17,6 +17,10 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "fast-booze.IoC", "fast-booz
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "IoC", "IoC", "{BF29BD45-6FB5-488F-8448-D5708C67EF6E}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "fast-booze.application", "fast-booze.application\fast-booze.application.csproj", "{AE770246-3F21-4ED3-9F2A-022D5AD2B07C}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "3-Application", "3-Application", "{9F54CC22-C852-4E39-A579-909B9E24461C}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -35,6 +39,10 @@ Global
 		{89F92135-9693-4F46-8B11-6F6E8CDA13E6}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{89F92135-9693-4F46-8B11-6F6E8CDA13E6}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{89F92135-9693-4F46-8B11-6F6E8CDA13E6}.Release|Any CPU.Build.0 = Release|Any CPU
+		{AE770246-3F21-4ED3-9F2A-022D5AD2B07C}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{AE770246-3F21-4ED3-9F2A-022D5AD2B07C}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{AE770246-3F21-4ED3-9F2A-022D5AD2B07C}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{AE770246-3F21-4ED3-9F2A-022D5AD2B07C}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -45,6 +53,7 @@ Global
 		{CF7973F0-3495-42F9-BA93-9ACDB93EE7B6} = {6D29AE59-78DC-4CBD-9D6A-FE742581EE49}
 		{89F92135-9693-4F46-8B11-6F6E8CDA13E6} = {BF29BD45-6FB5-488F-8448-D5708C67EF6E}
 		{BF29BD45-6FB5-488F-8448-D5708C67EF6E} = {6D29AE59-78DC-4CBD-9D6A-FE742581EE49}
+		{AE770246-3F21-4ED3-9F2A-022D5AD2B07C} = {9F54CC22-C852-4E39-A579-909B9E24461C}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {B8206500-89C3-4677-B776-8AA799695C60}
