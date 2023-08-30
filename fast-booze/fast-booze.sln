@@ -3,15 +3,19 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 17
 VisualStudioVersion = 17.6.33801.468
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "fast-booze.domain", "fast-booze\fast-booze.domain.csproj", "{6F3D7D21-CD32-4219-9814-04200B6586B4}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "fast-booze.domain", "fast-booze\fast-booze.domain.csproj", "{6F3D7D21-CD32-4219-9814-04200B6586B4}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "1-Domain", "1-Domain", "{F271D173-881C-491D-9C64-0636A1BE3FB8}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "fast-booze.data", "fast-booze.data\fast-booze.data.csproj", "{1EE29760-DEF4-4DE8-B51F-290984211FF6}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "fast-booze.data", "fast-booze.data\fast-booze.data.csproj", "{1EE29760-DEF4-4DE8-B51F-290984211FF6}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "2-Infrastructure", "2-Infrastructure", "{6D29AE59-78DC-4CBD-9D6A-FE742581EE49}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Data", "Data", "{CF7973F0-3495-42F9-BA93-9ACDB93EE7B6}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "fast-booze.IoC", "fast-booze.IoC\fast-booze.IoC.csproj", "{89F92135-9693-4F46-8B11-6F6E8CDA13E6}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "IoC", "IoC", "{BF29BD45-6FB5-488F-8448-D5708C67EF6E}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -27,6 +31,10 @@ Global
 		{1EE29760-DEF4-4DE8-B51F-290984211FF6}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{1EE29760-DEF4-4DE8-B51F-290984211FF6}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{1EE29760-DEF4-4DE8-B51F-290984211FF6}.Release|Any CPU.Build.0 = Release|Any CPU
+		{89F92135-9693-4F46-8B11-6F6E8CDA13E6}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{89F92135-9693-4F46-8B11-6F6E8CDA13E6}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{89F92135-9693-4F46-8B11-6F6E8CDA13E6}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{89F92135-9693-4F46-8B11-6F6E8CDA13E6}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -35,6 +43,8 @@ Global
 		{6F3D7D21-CD32-4219-9814-04200B6586B4} = {F271D173-881C-491D-9C64-0636A1BE3FB8}
 		{1EE29760-DEF4-4DE8-B51F-290984211FF6} = {CF7973F0-3495-42F9-BA93-9ACDB93EE7B6}
 		{CF7973F0-3495-42F9-BA93-9ACDB93EE7B6} = {6D29AE59-78DC-4CBD-9D6A-FE742581EE49}
+		{89F92135-9693-4F46-8B11-6F6E8CDA13E6} = {BF29BD45-6FB5-488F-8448-D5708C67EF6E}
+		{BF29BD45-6FB5-488F-8448-D5708C67EF6E} = {6D29AE59-78DC-4CBD-9D6A-FE742581EE49}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {B8206500-89C3-4677-B776-8AA799695C60}
