@@ -10,6 +10,6 @@ namespace fast_booze.application.Services.Interfaces
         Task<CustomerViewModel> Update(CustomerViewModel vm);
         Task<CustomerViewModel> Add(CustomerViewModel vm);
         Task<bool> Remove(Guid id);
-        IEnumerable<CustomerViewModel> GetCustomer();
+        IEnumerable<CustomerViewModel> GetCustomers();
     }
 }

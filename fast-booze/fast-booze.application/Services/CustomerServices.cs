@@ -36,7 +36,7 @@ namespace fast_booze.application.Services
                (_customerRepository.GetAll());
         }
 
-        public IEnumerable<CustomerViewModel> GetCustomer()
+        public IEnumerable<CustomerViewModel> GetCustomers()
         {
             return _mapper.Map<IEnumerable<CustomerViewModel>>(_customerRepository.GetCustomers());
 

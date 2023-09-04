@@ -36,7 +36,7 @@ namespace fast_booze.application.Services
                (_beverageRepository.GetAll());
         }
 
-        public IEnumerable<BeverageViewModel> GetBeverage()
+        public IEnumerable<BeverageViewModel> GetBeverages()
         {
             return _mapper.Map<IEnumerable<BeverageViewModel>>(_beverageRepository.GetBeverages());
 

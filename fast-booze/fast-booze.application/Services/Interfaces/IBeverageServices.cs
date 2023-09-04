@@ -10,6 +10,6 @@ namespace fast_booze.application.Services.Interfaces
         Task<BeverageViewModel> Update(BeverageViewModel vm);
         Task<BeverageViewModel> Add(BeverageViewModel vm);
         Task<bool> Remove(Guid id);
-        IEnumerable<BeverageViewModel> GetBeverage();
+        IEnumerable<BeverageViewModel> GetBeverages();
     }
 }
