@@ -18,7 +18,7 @@ namespace fast_booze.API.Controllers
 
         [AllowAnonymous]
         [HttpGet("orders")]
-        public async Task<IEnumerable<OrderViewModel>> GetAll()
+        public IEnumerable<OrderListViewModel> GetAll()
         {
             return _orderServices.GetOrders();
         }
@@ -29,14 +29,6 @@ namespace fast_booze.API.Controllers
             if (!ModelState.IsValid) return BadRequest(ModelState);
             var poll = await _orderServices.Add(vm);
             return Ok(poll);
-        }
-
-        [HttpPut("{id}")]
-        public async Task<ActionResult<OrderViewModel>> Update([FromBody] OrderViewModel vm)
-        {
-            if (!ModelState.IsValid) return BadRequest(ModelState);
-            var user = await _orderServices.Update(vm);
-            return Ok(user);
         }
 
         [HttpDelete("{id}")]

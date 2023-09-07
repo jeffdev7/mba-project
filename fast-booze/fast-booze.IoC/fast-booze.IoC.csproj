@@ -12,6 +12,7 @@
   </ItemGroup>
 
   <ItemGroup>
+    <ProjectReference Include="..\fast-booze.application\fast-booze.application.csproj" />
     <ProjectReference Include="..\fast-booze.data\fast-booze.data.csproj" />
     <ProjectReference Include="..\fast-booze\fast-booze.domain.csproj" />
   </ItemGroup>

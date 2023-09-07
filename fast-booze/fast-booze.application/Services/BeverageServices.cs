@@ -5,7 +5,6 @@ using fast_booze.data.DBConfiguration;
 using fast_booze.Entities;
 using fast_booze.Repositories.Interfaces;
 using Microsoft.EntityFrameworkCore;
-using System;
 
 namespace fast_booze.application.Services
 {
@@ -30,12 +29,6 @@ namespace fast_booze.application.Services
             return _mapper.Map<BeverageViewModel>(beverage);
         }
 
-        public IEnumerable<BeverageViewModel> GetAll()
-        {
-            return _mapper.Map<IEnumerable<BeverageViewModel>>
-               (_beverageRepository.GetAll());
-        }
-
         public IEnumerable<BeverageViewModel> GetBeverages()
         {
             return _mapper.Map<IEnumerable<BeverageViewModel>>(_beverageRepository.GetBeverages());
@@ -49,7 +42,7 @@ namespace fast_booze.application.Services
 
         public async Task<bool> Remove(Guid id)
         {
-            Beverage beverage = await _context.Beverages
+            Beverage? beverage = await _context.Beverages
                .Where(p => p.Id == id).SingleOrDefaultAsync();
 
             if (beverage == null)

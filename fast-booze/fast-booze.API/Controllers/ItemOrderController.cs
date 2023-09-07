@@ -23,28 +23,28 @@ namespace fast_booze.API.Controllers
             return _itemOrderServices.GetItemOrders();
         }
 
-        [HttpPost("add-itemOrder")]
-        public async Task<ActionResult<ItemOrderViewModel>> Add([FromBody] ItemOrderViewModel vm)
-        {
-            if (!ModelState.IsValid) return BadRequest(ModelState);
-            var poll = await _itemOrderServices.Add(vm);
-            return Ok(poll);
-        }
+        //[HttpPost("add-itemOrder")]
+        //public async Task<ActionResult<ItemOrderViewModel>> Add([FromBody] ItemOrderViewModel vm)
+        //{
+        //    if (!ModelState.IsValid) return BadRequest(ModelState);
+        //    var poll = await _itemOrderServices.Add(vm);
+        //    return Ok(poll);
+        //}
 
-        [HttpPut("{id}")]
-        public async Task<ActionResult<ItemOrderViewModel>> Update([FromBody] ItemOrderViewModel vm)
-        {
-            if (!ModelState.IsValid) return BadRequest(ModelState);
-            var user = await _itemOrderServices.Update(vm);
-            return Ok(user);
-        }
+        //[HttpPut("{id}")]
+        //public async Task<ActionResult<ItemOrderViewModel>> Update([FromBody] ItemOrderViewModel vm)
+        //{
+        //    if (!ModelState.IsValid) return BadRequest(ModelState);
+        //    var user = await _itemOrderServices.Update(vm);
+        //    return Ok(user);
+        //}
 
-        [HttpDelete("{id}")]
-        public async Task<ActionResult> Delete(Guid id)
-        {
-            var status = await _itemOrderServices.Remove(id);
-            if (!status) return BadRequest();
-            return Ok(status);
-        }
+        //[HttpDelete("{id}")]
+        //public async Task<ActionResult> Delete(Guid id)
+        //{
+        //    var status = await _itemOrderServices.Remove(id);
+        //    if (!status) return BadRequest();
+        //    return Ok(status);
+        //}
     }
 }

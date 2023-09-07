@@ -1,5 +1,4 @@
-﻿using fast_booze.Entities;
-using System.ComponentModel.DataAnnotations;
+﻿using System.ComponentModel.DataAnnotations;
 
 namespace fast_booze.application.ViewModel
 {
@@ -11,6 +10,5 @@ namespace fast_booze.application.ViewModel
         public string Email { get; set; }
         public string PhoneNumber { get; set; }
         public string CEP { get; set; }
-        public Guid OrderId { get;set; }
     }
 }

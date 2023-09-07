@@ -2,7 +2,6 @@
 using fast_booze.Entities.Auth;
 using Microsoft.AspNetCore.Identity.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore;
-using System.Reflection.Emit;
 
 namespace fast_booze.data.DBConfiguration
 {
@@ -26,7 +25,10 @@ namespace fast_booze.data.DBConfiguration
             builder.Entity<LiquorStore>().HasKey(_ => _.Id);
 
             builder.Entity<Customer>().HasKey(_ => _.Id);
-            builder.Entity<Customer>().HasOne(_ => _.Order);
+            builder.Entity<Customer>()
+                .HasMany(customer => customer.Orders)
+                .WithOne(order => order.Customer)
+                .HasForeignKey(order => order.CustomerId);
 
             builder.Entity<Order>().HasKey(_ => _.Id);
             builder.Entity<Order>()
@@ -34,7 +36,7 @@ namespace fast_booze.data.DBConfiguration
                 .WithOne(_ => _.Order);
             builder.Entity<Order>()
                 .HasOne(_ => _.Customer)
-                .WithOne(_ => _.Order).IsRequired();
+                .WithMany(_ => _.Orders);
 
             builder.Entity<ItemOrder>().HasKey(_ => _.Id);
             builder.Entity<ItemOrder>().HasOne(_ => _.Order);

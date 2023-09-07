@@ -18,26 +18,26 @@ namespace fast_booze.API.Controllers
 
         [AllowAnonymous]
         [HttpGet("beverages")]
-        public async Task<IEnumerable<BeverageViewModel>> GetAll()
+        public IEnumerable<BeverageViewModel> GetAll()
         {
             return _beverageServices.GetBeverages();
         }
 
-        [HttpPost("add-beverage")]
-        public async Task<ActionResult<BeverageViewModel>> Add([FromBody] BeverageViewModel vm)
-        {
-            if (!ModelState.IsValid) return BadRequest(ModelState);
-            var poll = await _beverageServices.Add(vm);
-            return Ok(poll);
-        }
+        //[HttpPost("add-beverage")]
+        //public async Task<ActionResult<BeverageViewModel>> Add([FromBody] BeverageViewModel vm)
+        //{
+        //    if (!ModelState.IsValid) return BadRequest(ModelState);
+        //    var poll = await _beverageServices.Add(vm);
+        //    return Ok(poll);
+        //}
 
-        [HttpPut("{id}")]
-        public async Task<ActionResult<BeverageViewModel>> Update([FromBody] BeverageViewModel vm)
-        {
-            if (!ModelState.IsValid) return BadRequest(ModelState);
-            var user = await _beverageServices.Update(vm);
-            return Ok(user);
-        }
+        //[HttpPut("{id}")]
+        //public async Task<ActionResult<BeverageViewModel>> Update([FromBody] BeverageViewModel vm)
+        //{
+        //    if (!ModelState.IsValid) return BadRequest(ModelState);
+        //    var user = await _beverageServices.Update(vm);
+        //    return Ok(user);
+        //}
 
         [HttpDelete("{id}")]
         public async Task<ActionResult> Delete(Guid id)

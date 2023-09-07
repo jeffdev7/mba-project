@@ -11,6 +11,7 @@ namespace fast_booze.application.AutoMapper
             CreateMap<BeverageViewModel, Beverage>();
             CreateMap<CustomerViewModel, Customer>();
             CreateMap<CustomerViewModel, Customer>();
+            CreateMap<ItemOrderViewModel, ItemOrder>();
             CreateMap<LiquorStoreViewModel, LiquorStore>();
             CreateMap<OrderViewModel, Order>()
                 .ForMember(_ => _.Items, opt=> opt
@@ -18,6 +19,8 @@ namespace fast_booze.application.AutoMapper
             CreateMap<StockViewModel, Stock>()
                 .ForMember(_ => _.Beverages, opt => opt
             .MapFrom(src=> src.Beverages));
+            CreateMap<StockListViewModel, Stock>()
+                .ForMember(_ => _.Beverages, booze => booze.Ignore());
         }
     }
 }

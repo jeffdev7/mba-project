@@ -13,11 +13,12 @@ namespace fast_booze.application.AutoMapper
             CreateMap<ItemOrder, ItemOrderViewModel>();
             CreateMap<LiquorStore, LiquorStoreViewModel>();
             CreateMap<Order, OrderViewModel>()
-                .ForMember(_ => _.Items, opt=> opt
-                .MapFrom(src => src.Items));
+                .ForMember(_ => _.Items, product => product.MapFrom(src => src.Items));
             CreateMap<Stock, StockViewModel>()
                 .ForMember(_ => _.Beverages, opt => opt
             .MapFrom(src=> src.Beverages));
+            CreateMap<Stock, StockListViewModel>()
+                .ForMember(_ => _.Beverages, booze => booze.MapFrom(src=> src.Beverages));
         }
     }
 }

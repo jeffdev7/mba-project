@@ -5,7 +5,6 @@ using fast_booze.data.DBConfiguration;
 using fast_booze.Entities;
 using fast_booze.Repositories.Interfaces;
 using Microsoft.EntityFrameworkCore;
-using System;
 
 namespace fast_booze.application.Services
 {
@@ -30,12 +29,6 @@ namespace fast_booze.application.Services
             return _mapper.Map<ItemOrderViewModel>(itemOrder);
         }
 
-        public IEnumerable<ItemOrderViewModel> GetAll()
-        {
-            return _mapper.Map<IEnumerable<ItemOrderViewModel>>
-               (_itemOrderRepository.GetAll());
-        }
-
         public IEnumerable<ItemOrderViewModel> GetItemOrders()
         {
             return _mapper.Map<IEnumerable<ItemOrderViewModel>>(_itemOrderRepository.GetItemOrders());
@@ -49,7 +42,7 @@ namespace fast_booze.application.Services
 
         public async Task<bool> Remove(Guid id)
         {
-            ItemOrder itemOrder = await _context.ItemOrders
+            ItemOrder? itemOrder = await _context.ItemOrders
                .Where(p => p.Id == id).SingleOrDefaultAsync();
 
             if (itemOrder == null)

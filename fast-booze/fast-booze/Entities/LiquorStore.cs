@@ -1,5 +1,4 @@
 ﻿using fast_booze.Entities.Enum;
-using System.Net;
 
 namespace fast_booze.Entities
 {

@@ -2,6 +2,7 @@
 using fast_booze.application.Services.Interfaces;
 using fast_booze.application.ViewModel;
 using fast_booze.data.DBConfiguration;
+using fast_booze.data.Repositories;
 using fast_booze.Entities;
 using fast_booze.Repositories.Interfaces;
 using Microsoft.EntityFrameworkCore;
@@ -14,12 +15,15 @@ namespace fast_booze.application.Services
         private readonly IMapper _mapper;
         private readonly IOrderRepository _orderRepository;
         private readonly ApplicationContext _context;
+        private readonly IItemOrderRepository _itemOrderRepository;
 
-        public OrderServices(IMapper mapper, IOrderRepository orderRepository, ApplicationContext context)
+        public OrderServices(IMapper mapper, IOrderRepository orderRepository, 
+            ApplicationContext context, IItemOrderRepository itemOrderRepository)
         {
             _mapper = mapper;
             _orderRepository = orderRepository;
             _context = context;
+            _itemOrderRepository = itemOrderRepository; 
         }
 
         public async Task<OrderViewModel> Add(OrderViewModel vm)
@@ -30,15 +34,35 @@ namespace fast_booze.application.Services
             return _mapper.Map<OrderViewModel>(order);
         }
 
-        public IEnumerable<OrderViewModel> GetAll()
+        public IEnumerable<OrderListViewModel> GetOrders()
         {
-            return _mapper.Map<IEnumerable<OrderViewModel>>
-               (_orderRepository.GetAll());
-        }
+            var orders = _orderRepository.GetOrders().ToList();
+            var orderViewModels = new List<OrderListViewModel>();
 
-        public IEnumerable<OrderViewModel> GetOrders()
-        {
-            return _mapper.Map<IEnumerable<OrderViewModel>>(_orderRepository.GetOrders());
+            foreach (var pedido in orders)
+            {
+                var itemOrders = _itemOrderRepository.GetAll()
+                    .Where(io => io.OrderId == pedido.Id)
+                    .Select(io => new ItemOrderViewModel
+                    {
+                        BeverageId = io.BeverageId,
+                        Quantity = io.Quantity,
+                        UnitPrice = io.UnitPrice,
+
+                    }).ToList();
+                    
+
+                var orderViewModel = new OrderListViewModel
+                {
+                    Id = pedido.Id,
+                    CustomerId = pedido.CustomerId,
+                    Items = itemOrders
+                };
+
+                orderViewModels.Add(orderViewModel);
+            }
+
+            return orderViewModels;
 
         }
 
@@ -49,7 +73,7 @@ namespace fast_booze.application.Services
 
         public async Task<bool> Remove(Guid id)
         {
-            Order order = await _context.Orders
+            Order? order = await _context.Orders
                .Where(p => p.Id == id).SingleOrDefaultAsync();
 
             if (order == null)
