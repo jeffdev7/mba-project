@@ -10,3 +10,6 @@
 <h4>Macro Design</h4>
 
 ![macro](https://github.com/jeffdev7/mba-project/assets/73981595/8784506e-c04f-4820-bd29-58fe8ca3d399)
+
+<h4>Pitch in Portuguese</h4>
+https://drive.google.com/file/d/1ixyRU86hSpnMOWr0mIPgnaz32DGIRVGO/view
